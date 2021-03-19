@@ -1,1 +1,1 @@
-//exempli para git
+//exemplo para git
