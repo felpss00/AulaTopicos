@@ -1,31 +1,14 @@
-import express from "express";
-import { Request, Response } from "express";
+import express, { Request, Response } from "express";
+import { router } from "./config/routes";
+import { mongoose } from "./config/database";
 const app = express();
+const db = mongoose;
 
 console.clear();
 
-//Funcionalidades
-//Metodos/Verbos HTTP -> POST e GET...
+app.use(express.json());
+app.use(router);
 
-app.get("/", (request: Request , response: Response) =>
-{
-    response.send("Hello World com ts-node-dev teste!");
+app.listen(3000, () => {
+  console.log("O servidor está rodando...");
 });
-
-app.get("/jogo/listar", (request: Request , response: Response)=> {
-    const jogo =   
-    {
-        titulo: "CS",
-        plataforma: "PC",
-        valor: 50.99,
-        genero: "FPS"
-    };
-    response.json(jogo);
-});
-
-
-app.listen(3000, () => 
-{
-    console.log("O servidor esta rodando...");
-});
-
