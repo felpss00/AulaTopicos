@@ -1,0 +1,31 @@
+###
+
+GET http://localhost:3000/pessoa/buscar/12345678901
+
+###
+
+GET http://localhost:3000/pessoa/listar
+
+###
+
+POST http://localhost:3000/pessoa/cadastrar
+Content-Type: application/json
+
+{
+    "nome": "Fellipe",
+    "cpf": "12345678912",
+    "idade": 21
+}
+
+###
+DELETE http://localhost:3000/pessoa/remover/12345678912
+
+###
+PUT http://localhost:3000/pessoa/alterar
+Content-Type: application/json
+
+{
+    "nome": "Felps",
+    "cpf": "12345678901",
+    "idade": 35
+}
